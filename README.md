@@ -43,6 +43,8 @@ As discussed in the interview, the design philosophy should be declarative first
 	- Adds '.invalid' to all the emails.
 - `SandboxRefreshAddInvalidEmail` 
 	- Calls the `AddInvalidToContactEmail` class to update emails, this class is added to the Sandbox Template during refresh. 
+#### Custom Settings
+- there is a Custom Setting `Sandbox__c` that is used in sandboxes to disable validation rules. This Custom Setting record is created when the `SandboxRefreshAddInvalidEmail` class is executed.
 
 #### Validation Rules
 - `Do_not_allow_invalid_email_postfix`
@@ -52,8 +54,7 @@ As discussed in the interview, the design philosophy should be declarative first
 
 
 ### Installation URL
-
-https://login.salesforce.com/packaging/installPackage.apexp?p0=04tHs000000cyFv
+https://login.salesforce.com/packaging/installPackage.apexp?p0=04tHs000000cyG0
 
 #### Post Install Actions
 - Add SandboxRefreshAddInvalidEmail to the sandbox template. 

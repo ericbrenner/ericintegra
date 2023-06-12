@@ -1,4 +1,5 @@
 public class AddInvalidToContactEmail {
+
     //List of all emails from the Contact object that do not end with .invalid, then add .invalid to them
 
     static String Invalid = '.invalid';

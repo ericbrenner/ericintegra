@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Do_not_allow_invalid_email_postfix</fullName>
-    <active>false</active>
+    <active>true</active>
     <description>Do not allow invalid email postfix in production.</description>
     <errorConditionFormula>AND(
 RIGHT(Email, 8) = &quot;.invalid&quot;,
-NOT( $Profile.Name = &apos;System Administrator&apos;)
+NOT( $Profile.Name = &apos;System Administrator&apos;),
+ $Setup.Sandbox__c.Sandbox__c = false
 )</errorConditionFormula>
     <errorDisplayField>Email</errorDisplayField>
     <errorMessage>Email cannot end with .invalid</errorMessage>
