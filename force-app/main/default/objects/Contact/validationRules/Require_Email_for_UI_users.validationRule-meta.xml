@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Email_for_UI_users</fullName>
+    <active>true</active>
+    <description>Ensure Contacts have an email address. Admins and Integration users are excluded from this rule.</description>
+    <errorConditionFormula>AND(
+ ISBLANK(Email),
+ OR(
+  ($Profile.Name != &apos;System Administrator&apos;),
+  ($Profile.Name != &apos;Salesforce API Only System Integrations&apos;)
+  )
+
+)</errorConditionFormula>
+    <errorDisplayField>Email</errorDisplayField>
+    <errorMessage>Email Address required.</errorMessage>
+</ValidationRule>
